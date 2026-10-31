@@ -1,8 +1,17 @@
+import { HeroSection } from '@/app/components/sections/HeroSection';
+import { WorkSection } from '@/app/components/sections/WorkSection';
+import { ApproachSection } from '@/app/components/sections/ApproachSection';
+import { PricingSection } from '@/app/components/sections/PricingSection';
+import { CTASection } from '@/app/components/sections/CTASection';
+
 export default function Home() {
   return (
-    <div style={{ background: 'black', color: 'white', padding: '20px', textAlign: 'center', minHeight: '100vh' }}>
-      <h1>🎬 Qualitide Studio</h1>
-      <p>Site is live and working!</p>
-    </div>
+    <main className="bg-black text-white overflow-hidden">
+      <HeroSection />
+      <WorkSection />
+      <ApproachSection />
+      <PricingSection />
+      <CTASection />
+    </main>
   );
 }
