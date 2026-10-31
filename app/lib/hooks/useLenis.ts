@@ -1,0 +1,24 @@
+import { useEffect } from 'react';
+import Lenis from 'lenis';
+
+export function useLenis() {
+  useEffect(() => {
+    // @ts-ignore
+    const lenis = new Lenis({
+      lerp: 0.1,
+      wheelMultiplier: 1,
+      gestureOrientation: 'vertical',
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+}
